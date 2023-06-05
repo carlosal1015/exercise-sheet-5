@@ -1,0 +1,81 @@
+\section{Pregunta N$^{\circ}$4\qquad Alejandro Escobar Mejia}
+
+\begin{frame}
+	\begin{enumerate}\setcounter{enumi}{3}
+		\item
+
+		      Una familia consta de una madre, un padre y una hija.
+		      La suma de las edades actuales de los tres es de $80$ años.
+		      Dentro de $22$ años, la edad del hijo sería la mitad que la
+		      de la madre.
+		      Si el padre es un año mayor que la madre.
+		      Determinar la edad de la familia según los siguientes
+		      requerimientos:
+
+		      \begin{enumerate}[a)]
+			      \item
+
+			            Modele el sistema.
+
+			      \item
+
+			            Resuelva el sistema usando el método de relajación
+			            y del descenso más rápido.
+		      \end{enumerate}
+	\end{enumerate}
+
+	\begin{solution}
+		\begin{enumerate}[a)]
+			\item
+
+			      Sean las edades de la \alert{madre}, del \alert{padre} y
+			      del \alert{hijo}: \alert{$x_{1}$}, \alert{$x_{2}$} y
+			      \alert{$x_{3}$}, respectivamente.
+			      Entonces, el sistema lineal es
+
+			      \begin{equation*}
+				      \systeme{
+				      x_{1}+x_{2}+x_{3}=80,
+				      -x_{1}+x_{2}=1,
+				      -x_{1}+2x_{3}=-22
+				      }
+			      \end{equation*}
+
+			      Así, la ecuación lineal resulta
+			      \begin{equation*}
+				      \underbrace{
+					      \begin{bmatrix}
+						      1  & 1 & 1 \\
+						      -1 & 1 & 0 \\
+						      -1 & 0 & 2
+					      \end{bmatrix}
+				      }_{\displaystyle A}
+				      \underbrace{
+					      \begin{bmatrix}
+						      x_{1} \\
+						      x_{2} \\
+						      x_{3}
+					      \end{bmatrix}
+				      }_{\displaystyle x}
+				      =
+				      \underbrace{
+					      \begin{bmatrix}
+						      80 \\
+						      1  \\
+						      -22
+					      \end{bmatrix}
+				      }_{\displaystyle b}.
+			      \end{equation*}
+		\end{enumerate}
+	\end{solution}
+\end{frame}
+
+\begin{frame}
+	\begin{solution}
+		\begin{enumerate}[b)]
+			\item
+
+			      .
+		\end{enumerate}
+	\end{solution}
+\end{frame}
