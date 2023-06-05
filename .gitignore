@@ -272,3 +272,4 @@ TSWLatexianTemp*
 # Makeindex log files
 *.lpz
 __pycache__
+!p*.pdf

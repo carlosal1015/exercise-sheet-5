@@ -18,4 +18,5 @@ if __name__ == "__main__":
   ax.plot(x, y, label="Curve")
   ax.plot(x, constant_function(x), label="Line")
   ax.legend()
-  plt.show()
+  # plt.show()
+  fig.savefig('p14.pdf')
