@@ -204,9 +204,14 @@
 
     \begin{solution}
       Ahora con los datos obtenidos pasamos a usar el metodo SOR:
-      \begin{equation}
-          (x_{i})^(k)=(1-w) x_{i}^(k-1)+\frac{w}{a_{ii}}
-      \end{equation}
+      \begin{equation*}
+          x_{i}^{k}=(1-w)x_{i}^{k-1}+\frac{w}{a_{ii}}(b_{i}-\sum\limits_{j=1}^{i-1}a_{ij}x_{j}^{k}) -\sum\limits_{j=i+1}^{n}a_{ij}x_{j}^{k-1})
+      \end{equation*}
+      y obtenemos que la edad del padre es 37, el de la madre es 36 y del hijo es 7.
     \end{solution}
+    
+\end{frame}
+
+\begin{frame}
     
 \end{frame}
