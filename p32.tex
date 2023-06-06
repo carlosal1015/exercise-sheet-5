@@ -56,6 +56,8 @@
 		$G\in\mathbb{R}^{n\times n}$ con entradas en la diagonal
 		positivas tal que $A=GG^{T}$.
 
+		\
+
 		\begin{equation*}
 			\drawmatrix[size=1.2]{A}=
 			\drawmatrix[size=1.2, lower, bbox style={fill=blue!10}]{G}\;
@@ -63,17 +65,25 @@
 		\end{equation*}
 	\end{theorem}
 
+	\
+
 	\begin{theorem}[Factorización $QR$]
 		Si $A\in\mathbb{R}^{m\times n}$, entonces existe una matriz
 		ortogonal $Q\in\mathbb{R}^{m\times m}$ y una matriz triangular
 		superior $R\in\mathbb{R}^{m\times n}$ tal que $A=QR$.
 
+		\
+
 		\begin{equation*}
-			\drawmatrix[size=1.2]{A}=
-			\drawmatrix[size=1.2, fill=yellow!10]{Q}\;
-			\drawmatrix[size=1.2, upper, bbox style={fill=green!10}]{R}
+			\drawmatrix[width=1.2, height=2]{A}=
+			\drawmatrix[width=2, height=2, fill=yellow!10]{Q}\;
+			\drawmatrix[width=1.2, height=1.2, upper, bbox style={fill=green!10}]{\widehat{R}}
+			\drawmatrix[width=1.2, height=1]{0}
 		\end{equation*}
 	\end{theorem}
+\end{frame}
+
+\begin{frame}
 
 	\begin{definition}[Espacio fila, espacio columna, rango]
 		Sea $A\in\mathbb{R}^{m\times n}$.
@@ -87,12 +97,11 @@
 	\end{definition}
 
 	\begin{theorem}
-		Si $A\in\mathbb{R}^{m\times n}$, entonces la dimensión del espacio
-		fila de $A$ es igual a la dimensión del espacio columna de $A$.
+		Si $A\in\mathbb{R}^{m\times n}$, entonces la dimensión del
+		espacio fila de $A$ es igual a la dimensión del espacio columna
+		de $A$.
 	\end{theorem}
-\end{frame}
 
-\begin{frame}
 	\begin{theorem}[Factorización $QR$ delgada]\label{thm:tinyqr}
 		Suponga que $A\in\mathbb{R}^{m\times n}$ tiene rango columna
 		completa.
@@ -112,8 +121,8 @@
 			\qquad
 			\qquad
 			\qquad
-			\drawmatrix[size=1.2]{A}\;
-			\drawmatrix[size=1.2, exponent=T]{A}=
+			\drawmatrix[size=1.2, exponent=T]{A}\;
+			\drawmatrix[size=1.2]{A}=
 			\drawmatrix[size=1.2, lower, bbox style={fill=blue!10}]{G}\;
 			\drawmatrix[size=1.2, upper, exponent=T, bbox style={fill=green!10}]{G}
 		\end{equation*}
@@ -237,7 +246,7 @@
 		\begin{math}
 			A=
 			\begin{bmatrix}
-				c_{1} & \dotsc & c_{n}
+				c_{1} | & \cdots & |c_{n}
 			\end{bmatrix}
 			\in\mathbb{R}^{m\times n}
 		\end{math}
