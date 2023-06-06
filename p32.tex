@@ -1,6 +1,55 @@
 \section{Pregunta N$^{\circ}$32\qquad Carlos Alonso Aznarán Laos}
 
 \begin{frame}
+
+	\begin{theorem}[Factorización $LU$]
+		Si $A\in\mathbb{R}^{n\times n}$ y
+		\begin{math}
+			\forall k\in\left\{1,\dotsc,n-1\right\}:
+			\left|A_{k}\right|\neq 0
+		\end{math},
+		entonces existen $L\in\mathbb{R}^{n\times n}$ y
+		$U\in\mathbb{R}^{n\times n}$, matriz triangular inferior de unos
+		en su diagonal y una matriz triangular superior, respectivamente,
+		tales que $A=LU$.
+	\end{theorem}
+
+	\begin{theorem}[Factorización $LDL^{T}$]
+		Si $A\in\mathbb{R}^{n\times n}$ es simétrica y
+		\begin{math}
+			\forall k\in\left\{1,\dotsc,n-1\right\}:
+			\left|A_{k}\right|\neq 0
+		\end{math},
+		entonces existe una matriz triangular inferior de unos en su
+		diagonal $L$ y una matriz diagonal $D$ tal que $A=LDL^{T}$.
+		La factorización es única.
+	\end{theorem}
+
+	\begin{theorem}[Factorización de Cholesky]
+		Si $A\in\mathbb{R}^{n\times n}$ es simétrica y definida
+		positiva, entonces existe una única
+		$G\in\mathbb{R}^{n\times n}$ con entradas en la diagonal
+		positivas tal que $A=GG^{T}$.
+	\end{theorem}
+
+	\begin{theorem}[Factorización $QR$]
+		Si $A\in\mathbb{R}^{m\times n}$, entonces existe una matriz
+		ortogonal $Q\in\mathbb{R}^{m\times m}$ y una matriz triangular
+		superior $R\in\mathbb{R}^{m\times n}$ tal que $A=QR$.
+	\end{theorem}
+
+	\begin{theorem}[Factorización $QR$ delgada]
+		Suponga que $A\in\mathbb{R}^{m\times n}$ tiene rango columna
+		completa.
+		La factorización $QR$ delgada $A=Q_{1}R_{1}$ es única donde
+		$Q_{1}\in\mathbb{R}^{m\times n}$ tiene columnas ortogonales y
+		$R_{1}$ es triangular superior con entradas diagonal positivas.
+		Más aún, $R_{1}=G^{T}$ donde $G$ es el factor triangular
+		inferior de $A^{T}A$.
+	\end{theorem}
+\end{frame}
+
+\begin{frame}
 	\begin{enumerate}\setcounter{enumi}{31}
 		\item
 
@@ -18,7 +67,22 @@
 
 	\begin{solution}
 
-		.
+		\begin{theorem}[Factorización $QR$]
+			Sea $A$ una matriz $m\times n$ con columnas independientes.
+			La \alert{factorización $QR$} de $A$ expresa
+		\end{theorem}
+
+		Primero veamos el siguiente
+		\begin{theorem}
+			Si $R$ es triangular superior e invertible, entonces existe
+			una matriz diagonal $D$ con entradas en la diagonal $\pm 1$ tal
+			que $R_{1}=DR$ es invertible, triangular superior y tiene
+			entradas en la diagonal positivas.
+		\end{theorem}
+
+		\begin{proof}
+			.
+		\end{proof}
 	\end{solution}
 \end{frame}
 
