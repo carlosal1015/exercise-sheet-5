@@ -12,9 +12,13 @@
 		$U\in\mathbb{R}^{n\times n}$, matriz triangular inferior de unos
 		en su diagonal y una matriz triangular superior, respectivamente,
 		tales que $A=LU$.
-	\end{theorem}
 
-	\
+		\begin{equation*}
+			\drawmatrix{A}=
+			\drawmatrix[lower, bbox style={fill=blue!10}]{L}
+			\drawmatrix[upper, bbox style={fill=green!10}]{U}
+		\end{equation*}
+	\end{theorem}
 
 	\begin{theorem}[Factorización $LDL^{T}$]
 		Si $A\in\mathbb{R}^{n\times n}$ es simétrica y
@@ -25,10 +29,16 @@
 		entonces existe una matriz triangular inferior de unos en su
 		diagonal $L$ y una matriz diagonal $D$ tal que $A=LDL^{T}$.
 		La factorización es única.
+
+		\begin{equation*}
+			\drawmatrix{A}=
+			\drawmatrix[lower]{L}
+			\drawmatrix[lower, exponent=T]{L}
+		\end{equation*}
 	\end{theorem}
+\end{frame}
 
-	\
-
+\begin{frame}
 	\begin{theorem}[Factorización de Cholesky]
 		Si $A\in\mathbb{R}^{n\times n}$ es simétrica y definida
 		positiva, entonces existe una única
@@ -36,15 +46,11 @@
 		positivas tal que $A=GG^{T}$.
 	\end{theorem}
 
-	\
-
 	\begin{theorem}[Factorización $QR$]
 		Si $A\in\mathbb{R}^{m\times n}$, entonces existe una matriz
 		ortogonal $Q\in\mathbb{R}^{m\times m}$ y una matriz triangular
 		superior $R\in\mathbb{R}^{m\times n}$ tal que $A=QR$.
 	\end{theorem}
-
-	\
 
 	\begin{theorem}[Factorización $QR$ delgada]\label{thm:tinyqr}
 		Suponga que $A\in\mathbb{R}^{m\times n}$ tiene rango columna
@@ -56,17 +62,13 @@
 		Más aún, $R_{1}=G^{T}$ donde $G$ es el factor triangular
 		inferior de $A^{T}A$.
 	\end{theorem}
-\end{frame}
+	% \begin{definition}[Rango]
+	% 	.
+	% \end{definition}
 
-\begin{frame}
-
-	\begin{definition}[Rango]
-		.
-	\end{definition}
-
-	\begin{definition}[Columnas independientes]
-		.
-	\end{definition}
+	% \begin{definition}[Columnas independientes]
+	% 	.
+	% \end{definition}
 
 	% Primero veamos el siguiente
 	\begin{alertblock}{Pregunta $31$}
