@@ -14,6 +14,8 @@
 		tales que $A=LU$.
 	\end{theorem}
 
+	\
+
 	\begin{theorem}[Factorización $LDL^{T}$]
 		Si $A\in\mathbb{R}^{n\times n}$ es simétrica y
 		\begin{math}
@@ -25,6 +27,8 @@
 		La factorización es única.
 	\end{theorem}
 
+	\
+
 	\begin{theorem}[Factorización de Cholesky]
 		Si $A\in\mathbb{R}^{n\times n}$ es simétrica y definida
 		positiva, entonces existe una única
@@ -32,30 +36,101 @@
 		positivas tal que $A=GG^{T}$.
 	\end{theorem}
 
+	\
+
 	\begin{theorem}[Factorización $QR$]
 		Si $A\in\mathbb{R}^{m\times n}$, entonces existe una matriz
 		ortogonal $Q\in\mathbb{R}^{m\times m}$ y una matriz triangular
 		superior $R\in\mathbb{R}^{m\times n}$ tal que $A=QR$.
 	\end{theorem}
 
-	\begin{theorem}[Factorización $QR$ delgada]
+	\
+
+	\begin{theorem}[Factorización $QR$ delgada]\label{thm:tinyqr}
 		Suponga que $A\in\mathbb{R}^{m\times n}$ tiene rango columna
 		completa.
 		La factorización $QR$ delgada $A=Q_{1}R_{1}$ es única donde
 		$Q_{1}\in\mathbb{R}^{m\times n}$ tiene columnas ortogonales y
-		$R_{1}$ es triangular superior con entradas diagonal positivas.
+		$R_{1}$ es triangular superior con entradas en la diagonal
+		positivas.
 		Más aún, $R_{1}=G^{T}$ donde $G$ es el factor triangular
 		inferior de $A^{T}A$.
 	\end{theorem}
 \end{frame}
 
 \begin{frame}
+
+	\begin{definition}[Rango]
+		.
+	\end{definition}
+
+	\begin{definition}[Columnas independientes]
+		.
+	\end{definition}
+
+	% Primero veamos el siguiente
+	\begin{alertblock}{Pregunta $31$}
+		Si $R$ es triangular superior e invertible, entonces existe
+		una matriz diagonal $D$ con entradas en la diagonal $\pm 1$ tal
+		que $R_{1}=DR$ es invertible, triangular superior y tiene
+		entradas en la diagonal positivas.
+	\end{alertblock}
+
+	\begin{example}[de la pregunta $31$]
+		Sea
+		\begin{math}
+			R=
+			\begin{bmatrix}
+				1 & 1 \\
+				0 & 1
+			\end{bmatrix}\in\mathbb{R}^{2\times 2}
+		\end{math}
+		una matriz triangular superior e invertible porque el
+		$\det\left(R\right)=1$.
+		Entonces, existe
+		\begin{math}
+			D=
+			\begin{bmatrix}
+				\alert{1} & 0         \\
+				0         & \alert{1}
+			\end{bmatrix}
+		\end{math}
+		con
+		\begin{math}
+			\left|a_{11}\right|=
+			\left|a_{22}\right|=
+			\alert{1}
+		\end{math}
+		tal que
+		\begin{math}
+			R_{1}=
+			DR=
+			\begin{bmatrix}
+				1 & 0 \\
+				0 & 1
+			\end{bmatrix}
+			\begin{bmatrix}
+				1 & 1 \\
+				0 & 1
+			\end{bmatrix}=
+			\begin{bmatrix}
+				\alert{1} & 1         \\
+				0         & \alert{1}
+			\end{bmatrix}
+		\end{math}
+		es triangular superior, invertible porque el
+		$\det\left(R_{1}\right)=1$ y las entradas
+		de la diagonal son \alert{positivas}.
+	\end{example}
+\end{frame}
+
+\begin{frame}
 	\begin{enumerate}\setcounter{enumi}{31}
 		\item
 
-		      Si $A$ tiene columnas independientes, sea $A=QR$ donde $Q$
-		      tiene columnas ortogonales y $R$ es invertible y triangular
-		      superior.
+		      Si $A$ tiene vectores columna linealmente independientes,
+		      sea $A=QR$ donde $Q$ tiene columnas ortogonales y $R$ es
+		      invertible y triangular superior.
 		      Mostrar que existe una matriz diagonal $D$ con entradas en
 		      la diagonal $\pm 1$ tal que
 		      \begin{math}
@@ -66,29 +141,39 @@
 	\end{enumerate}
 
 	\begin{solution}
+		Sea
+		\begin{math}
+			A=
+			\begin{bmatrix}
+				c_{1} & \dotsc & c_{n}
+			\end{bmatrix}
+			\in\mathbb{R}^{m\times n}
+		\end{math}
+		y
+		\begin{math}
+			\left\{
+			c_{1},
+			\dotsc,
+			c_{n}
+			\right\}\subset\mathbb{R}^{m}
+		\end{math}
+		es un conjunto linealmente independiente.
+		Por el teorema~\eqref{thm:tinyqr}, $A$ posee una factorización
+		(única) $QR$, donde $Q\in\mathbb{R}^{m\times n}$ tiene columnas
+		ortogonales y $R$ es triangular superior con entradas en la
+		diagonal positivas.
 
-		\begin{theorem}[Factorización $QR$]
-			Sea $A$ una matriz $m\times n$ con columnas independientes.
-			La \alert{factorización $QR$} de $A$ expresa
-		\end{theorem}
+		Además, por la pregunta $31$,
 
-		Primero veamos el siguiente
-		\begin{theorem}
-			Si $R$ es triangular superior e invertible, entonces existe
-			una matriz diagonal $D$ con entradas en la diagonal $\pm 1$ tal
-			que $R_{1}=DR$ es invertible, triangular superior y tiene
-			entradas en la diagonal positivas.
-		\end{theorem}
-
-		\begin{proof}
-			.
-		\end{proof}
+		% \begin{theorem}[Factorización $QR$]
+		% 	Sea $A$ una matriz $m\times n$ con columnas independientes.
+		% 	La \alert{factorización $QR$} de $A$ expresa
+		% \end{theorem}
 	\end{solution}
 \end{frame}
 
 \begin{frame}
 	\begin{solution}
-
 		.
 	\end{solution}
 \end{frame}

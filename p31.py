@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-"""Programa p32.py"""
+"""Programa p31.py"""
 
 import sympy as sp
 
