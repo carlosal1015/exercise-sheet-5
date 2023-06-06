@@ -12,13 +12,21 @@
 		$U\in\mathbb{R}^{n\times n}$, matriz triangular inferior de unos
 		en su diagonal y una matriz triangular superior, respectivamente,
 		tales que $A=LU$.
+		Si $A$ es no singular, entonces la factorización es única y el
+		\begin{math}
+			\det\left(A\right)=u_{11}\cdots u_{nn}
+		\end{math}.
+
+		\
 
 		\begin{equation*}
-			\drawmatrix{A}=
-			\drawmatrix[lower, bbox style={fill=blue!10}]{L}
-			\drawmatrix[upper, bbox style={fill=green!10}]{U}
+			\drawmatrix[size=1.2]{A}=
+			\drawmatrix[size=1.2, lower, bbox style={fill=blue!10}]{L}\;
+			\drawmatrix[size=1.2, upper, bbox style={fill=green!10}]{U}
 		\end{equation*}
 	\end{theorem}
+
+	\
 
 	\begin{theorem}[Factorización $LDL^{T}$]
 		Si $A\in\mathbb{R}^{n\times n}$ es simétrica y
@@ -30,10 +38,13 @@
 		diagonal $L$ y una matriz diagonal $D$ tal que $A=LDL^{T}$.
 		La factorización es única.
 
+		\
+
 		\begin{equation*}
-			\drawmatrix{A}=
-			\drawmatrix[lower]{L}
-			\drawmatrix[lower, exponent=T]{L}
+			\drawmatrix[size=1.2]{A}=
+			\drawmatrix[size=1.2, lower, bbox style={fill=blue!10}]{L}\;
+			\drawmatrix[size=1.2, diag, bbox style={fill=red!10}]{D}\;
+			\drawmatrix[size=1.2, upper, exponent=T, bbox style={fill=green!10}]{L}
 		\end{equation*}
 	\end{theorem}
 \end{frame}
@@ -41,17 +52,47 @@
 \begin{frame}
 	\begin{theorem}[Factorización de Cholesky]
 		Si $A\in\mathbb{R}^{n\times n}$ es simétrica y definida
-		positiva, entonces existe una única
+		positiva, entonces existe una única matriz triangular inferior
 		$G\in\mathbb{R}^{n\times n}$ con entradas en la diagonal
 		positivas tal que $A=GG^{T}$.
+
+		\begin{equation*}
+			\drawmatrix[size=1.2]{A}=
+			\drawmatrix[size=1.2, lower, bbox style={fill=blue!10}]{G}\;
+			\drawmatrix[size=1.2, upper, exponent=T, bbox style={fill=green!10}]{G}
+		\end{equation*}
 	\end{theorem}
 
 	\begin{theorem}[Factorización $QR$]
 		Si $A\in\mathbb{R}^{m\times n}$, entonces existe una matriz
 		ortogonal $Q\in\mathbb{R}^{m\times m}$ y una matriz triangular
 		superior $R\in\mathbb{R}^{m\times n}$ tal que $A=QR$.
+
+		\begin{equation*}
+			\drawmatrix[size=1.2]{A}=
+			\drawmatrix[size=1.2, fill=yellow!10]{Q}\;
+			\drawmatrix[size=1.2, upper, bbox style={fill=green!10}]{R}
+		\end{equation*}
 	\end{theorem}
 
+	\begin{definition}[Espacio fila, espacio columna, rango]
+		Sea $A\in\mathbb{R}^{m\times n}$.
+		El subespacio de $\mathbb{R}^{1\times n}$ generado por los
+		vectores fila de $A$ es el \alert{espacio fila de $A$}.
+		El subespacio de $\mathbb{R}^{m}$ generado por los vectores
+		columna de $A$ es el \alert{espacio columna de $A$}.
+		El \alert{rango de la matriz $A$}, denotado por
+		$\operatorname{rang}\left(A\right)$, es la dimensión del espacio
+		fila de $A$.
+	\end{definition}
+
+	\begin{theorem}
+		Si $A\in\mathbb{R}^{m\times n}$, entonces la dimensión del espacio
+		fila de $A$ es igual a la dimensión del espacio columna de $A$.
+	\end{theorem}
+\end{frame}
+
+\begin{frame}
 	\begin{theorem}[Factorización $QR$ delgada]\label{thm:tinyqr}
 		Suponga que $A\in\mathbb{R}^{m\times n}$ tiene rango columna
 		completa.
@@ -59,26 +100,56 @@
 		$Q_{1}\in\mathbb{R}^{m\times n}$ tiene columnas ortogonales y
 		$R_{1}$ es triangular superior con entradas en la diagonal
 		positivas.
-		Más aún, $R_{1}=G^{T}$ donde $G$ es el factor triangular
-		inferior de $A^{T}A$.
+		Más aún, $R_{1}=G^{T}$ donde $G$ es el factor de Cholesky
+		triangular inferior de $A^{T}A$.
+
+		\
+
+		\begin{equation*}
+			\drawmatrix[size=1.2]{A}=
+			\drawmatrix[size=1.2, fill=yellow!10]{Q_{1}}\;
+			\drawmatrix[size=1.2, upper, bbox style={fill=green!10}]{R_{1}}
+			\qquad
+			\qquad
+			\qquad
+			\drawmatrix[size=1.2]{A}\;
+			\drawmatrix[size=1.2, exponent=T]{A}=
+			\drawmatrix[size=1.2, lower, bbox style={fill=blue!10}]{G}\;
+			\drawmatrix[size=1.2, upper, exponent=T, bbox style={fill=green!10}]{G}
+		\end{equation*}
 	\end{theorem}
-	% \begin{definition}[Rango]
-	% 	.
-	% \end{definition}
 
-	% \begin{definition}[Columnas independientes]
-	% 	.
-	% \end{definition}
+	\
 
-	% Primero veamos el siguiente
-	\begin{alertblock}{Pregunta $31$}
+	\begin{example}[Factorización $QR$ delgada]
+		Sea
+		\begin{math}
+			A=
+			\begin{bmatrix}
+				1 & 0 & 0  \\
+				2 & 1 & -1
+			\end{bmatrix}
+		\end{math}.
+	\end{example}
+\end{frame}
+
+\begin{frame}
+	\begin{theorem}[Pregunta N$^{\circ}$31]
 		Si $R$ es triangular superior e invertible, entonces existe
 		una matriz diagonal $D$ con entradas en la diagonal $\pm 1$ tal
 		que $R_{1}=DR$ es invertible, triangular superior y tiene
 		entradas en la diagonal positivas.
-	\end{alertblock}
 
-	\begin{example}[de la pregunta $31$]
+		\
+
+		\begin{equation*}
+			\drawmatrix[size=1.2, upper, bbox style={fill=green!10}]{R_{1}}=
+			\drawmatrix[size=1.2, diag, bbox style={fill=red!10}]{D}\;
+			\drawmatrix[size=1.2, upper, bbox style={fill=green!10}]{R}
+		\end{equation*}
+	\end{theorem}
+
+	\begin{example}[Pregunta N$^{\circ}$31]
 		Sea
 		\begin{math}
 			R=
@@ -140,9 +211,28 @@
 			      \left(QD\right)
 			      \left(DR\right)
 		      \end{math}.
+
+		      \begin{equation*}
+			      \drawmatrix[size=1.2]{A}=
+			      \drawmatrix[size=1.2, fill=yellow!10]{Q}\;
+			      \drawmatrix[size=1.2, upper, bbox style={fill=green!10}]{R}
+			      \qquad
+			      \qquad
+			      \qquad
+			      \drawmatrix[size=1.2]{A}=
+			      \left(
+			      \drawmatrix[size=1.2, fill=yellow!10]{Q}\;
+			      \drawmatrix[size=1.2, diag, bbox style={fill=red!10}]{D}\;
+			      \right)
+			      \left(
+			      \drawmatrix[size=1.2, diag, bbox style={fill=red!10}]{D}\;
+			      \drawmatrix[size=1.2, upper, bbox style={fill=green!10}]{R}
+			      \right)
+		      \end{equation*}
 	\end{enumerate}
 
 	\begin{solution}
+		% En primer lugar, veamos el siguiente
 		Sea
 		\begin{math}
 			A=
