@@ -30,6 +30,7 @@ if __name__ == "__main__":
   print(f"rho(M_sor)=\n{spectral_radius(get_M_sor(A, 1))}\n")
   print(f"{is_spectral_radius_less_1(get_M_sor(A, 1))}")
   print(f"A.T @ A=\n{A_tilde}\n")
+  print(f"A.T @ b=\n{b_tilde}\n")
   print(f"¿A.T @ A es simétrica? {is_symmetric(A_tilde)}")
   print(f"¿A.T @ A es definida positiva? {is_positive_definite(A_tilde)}")
   print(f"w_opt= {w_opt(A_tilde)}")

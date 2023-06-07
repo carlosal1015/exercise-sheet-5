@@ -74,18 +74,15 @@
 	\begin{solution}
 		\begin{enumerate}[b)]
 			\item
-
-			      El método llamado sobre-relajación sucesiva (SOR) toma
-			      la dirección de Gauss-Seidel hacia la solución y
-			      ``sobrepasa'' para tratar de acelerar la convergencia.
-
-			      Sea
-			      \begin{math}
-				      A=L+D+U
-			      \end{math}
-                  
-                  
-                  Para este método primero reescribiremos la matriz A y el vector x de la siguiente manera:
+			      % El método de sobre-relajación sucesiva (SOR) toma la
+			      % dirección de Gauss-Seidel hacia la solución y
+			      % ``sobrepasa'' para tratar de acelerar la convergencia.
+			      % Sea
+			      % \begin{math}
+			      %   A=L+D+U
+			      % \end{math}
+			      Para este método primero reescribiremos la matriz $A$ y
+			      el vector $x$ de la siguiente manera
 
 			      \begin{equation*}
 				      \underbrace{
@@ -111,15 +108,16 @@
 					      \end{bmatrix}
 				      }_{\displaystyle b}.
 			      \end{equation*}
-         Ahora multiplicamos por la transpuesta de A a todo el sistema obteniendo el nuevo sistema:
-          \begin{equation*}
+
+			      Multiplicamos por $A^{T}$ al sistema obteniendo
+			      \begin{equation*}
 				      \underbrace{
 					      \begin{bmatrix}
 						      3  & -1 & 0 \\
-						      -1 & 5 & 1 \\
-						      0 & 1 & 2
+						      -1 & 5  & 1 \\
+						      0  & 1  & 2
 					      \end{bmatrix}
-				      }_{\displaystyle A'}
+				      }_{\displaystyle \widetilde{A}}
 				      \underbrace{
 					      \begin{bmatrix}
 						      x_{1} \\
@@ -134,137 +132,175 @@
 						      36  \\
 						      81
 					      \end{bmatrix}
-				      }_{\displaystyle b'}.
+				      }_{\displaystyle \widetilde{b}}.
 			      \end{equation*}
-         como podemos notar la matriz A' obtenida es tridiagonal, además sus autovalores:
-             \begin{math}
-				λ_{1}=1.623,
-                λ_{2}=2.726,
-                λ_{3}=5.651
-			\end{math}
-         
-         podemos verficar entonces que tambien es definida positiva
+			      como podemos notar la matriz $\widetilde{A}$ obtenida es
+			      tridiagonal y definida positiva porque todos sus
+			      autovalores
+			      \begin{math}
+				      \lambda_{1}=1.623,
+				      \lambda_{2}=2.726,
+				      \lambda_{3}=5.651
+			      \end{math}
+			      son positivos.
 		\end{enumerate}
 	\end{solution}
 \end{frame}
 
 \begin{frame}
-    \begin{solution}
-       De estas condiciones podemos usar el teorema de Ostrowski-Reich que nos dice:
-        \begin{equation*}
-            w=\frac{2}{1+\sqrt{1-[p[T_{j}]]^{2}}}
-        \end{equation*}
-        donde \begin{math}
-            p[T_{j}]
-        \end{math}
-        es el radio espectral de la matriz Jacobiana de A'
-    entonces procedemos hallarlo:
-        \begin{math}
-          A=  
-        \underbrace{ \begin{bmatrix}
-        3 & 0 & 0 \\
-        0 & 5 & 0 \\
-        0 & 0 & 2 \\
-        \end{bmatrix}}_{\displaystyle D}
-        -
-        \underbrace{\begin{bmatrix}
-        0 & 0 & 0 \\
-        1 & 0 & 0 \\
-        0 & -1 & 0 \\
-        \end{bmatrix}}_{\displaystyle L}
-        -
-        \underbrace{\begin{bmatrix}
-        0 & 1 & 0 \\
-        0 & 0 & -1 \\
-        0 & 0 & 0 \\
-        \end{bmatrix}}_{\displaystyle U}
-        
-        \end{math} 
-        \begin{math}
-            T_{j}=D^{-1}(L+U)
-        =\begin{bmatrix}
-            0 & 1/3 & 0 \\
-            1/5 & 0 & -1/5 \\
-            0 & -1/2 & 0 \\
-            \end{bmatrix}
-        \end{math}
-        \\Entonces obtenemos que
-        \begin{math}
-            p[T_{j}]=0.408
-        \end{math} 
-        y que 
-        \begin{math}
-            w=1.045
-        \end{math}
-        
-    \end{solution}
+	\begin{solution}
+		\begin{enumerate}[b)]
+			\item
+
+			      El teorema de \alert{Ostrowoski-Reich} afirma que si
+			      $\widetilde{A}$ es simétrica, definida positiva y
+			      tridiagonal, la elección óptima del
+			      coeficiente de relajación es
+			      \begin{equation*}
+				      \omega_{\text{opt}}=
+				      \dfrac{2}{
+				      1+
+				      \sqrt{1-{\rho\left(T_{\text{Jac}}\right)}^{2}}
+				      }.
+			      \end{equation*}
+			      donde \begin{math}
+				      \rho\left(T_{\text{Jac}}\right)
+			      \end{math}
+			      es el radio espectral de la matriz de iteración de
+			      Jacobi de $\widetilde{A}$.
+			      Luego,
+			      \begin{align*}
+				      \widetilde{A}  & =
+				      \underbrace{ \begin{bmatrix}
+						                   3 & 0 & 0 \\
+						                   0 & 5 & 0 \\
+						                   0 & 0 & 2
+					                   \end{bmatrix}}_{\displaystyle D}
+				      -
+				      \underbrace{\begin{bmatrix}
+						                  0 & 0  & 0 \\
+						                  1 & 0  & 0 \\
+						                  0 & -1 & 0
+					                  \end{bmatrix}}_{\displaystyle L}
+				      -
+				      \underbrace{\begin{bmatrix}
+						                  0 & 1 & 0  \\
+						                  0 & 0 & -1 \\
+						                  0 & 0 & 0
+					                  \end{bmatrix}}_{\displaystyle U}. \\
+				      T_{\text{Jac}} & =D^{-1}\left(L+U\right)=
+				      \begin{bmatrix}
+					      0            & \dfrac{1}{3}  & 0             \\
+					      \dfrac{1}{5} & 0             & -\dfrac{1}{5} \\
+					      0            & -\dfrac{1}{2} & 0
+				      \end{bmatrix}.
+			      \end{align*}
+			      Entonces obtenemos que
+			      \begin{math}
+				      \rho\left(T_{\text{Jac}}\right)=
+				      0.408
+			      \end{math}
+			      y
+			      \begin{math}
+				      \omega_{\text{opt}}=
+				      1.045
+			      \end{math}.
+		\end{enumerate}
+	\end{solution}
 \end{frame}
 
 \begin{frame}
+	\begin{solution}
+		\begin{enumerate}[b)]
+			\item
 
-    \begin{solution}
-      Ahora con los datos obtenidos pasamos a usar el metodo SOR:
-      \begin{equation*}
-          x_{i}^{(k)}=(1-w)x_{i}^{(k-1)}+\frac{w}{a_{ii}}(b_{i}-\sum\limits_{j=1}^{i-1}a_{ij}x_{j}^{(k)} -\sum\limits_{j=i+1}^{n}a_{ij}x_{j}^{(k-1)})
-      \end{equation*}
-      y obtenemos que la edad del padre es 37, el de la madre es 36 y del hijo es 7.
-    \end{solution}
-    
+			      Ahora con los datos obtenidos pasamos a usar el método de
+			      SOR
+			      \begin{equation*}
+				      x_{i}^{\left(k\right)}=
+				      \left(1-\omega\right)
+				      x_{i}^{\left(k-1\right)}+
+				      \dfrac{\omega}{a_{ii}}
+				      \left(
+				      b_{i}-
+				      \sum\limits_{j=1}^{i-1}
+				      a_{ij}x_{j}^{\left(k\right)}-
+				      \sum\limits_{j=i+1}^{n}
+				      a_{ij}x_{j}^{\left(k-1\right)}
+				      \right).
+			      \end{equation*}
+			      Obtenemos que la edad del \alert{padre es $37$}, de la
+			      \alert{madre es $36$} y del \alert{hijo es $7$}.
+		\end{enumerate}
+	\end{solution}
 \end{frame}
 
 \begin{frame}
-    Para el método de Descenso Rápido, pasamos a usar las ecuaciones\\
-    \begin{equation*}
-        v^{(k+1)}=r^{(k)}=b-Ax^{(k)} 
-    \end{equation*}
-     
-     \begin{equation*}
-         t_{k}=\frac{<v^{(k)},r^{(k-1)}>}{<v^{(k)},Av^{(k)}>}=\frac{(v^{(k)})^{t}r^{(k-1)}}{(v^{(k)})^{t}Av^{(k)}}
-    \end{equation*}
-    
-    \begin{equation*}
-         x^{(k)}=x^{(k-1)}+t_{k}v^{(k)}
-    \end{equation*}
-    Para la primera iteración tenemos:
-    \begin{equation*}
-        v^{(1)}=r^{(0)}=b-Ax^{(0)} 
-    \end{equation*}
-    \begin{equation*}
-        v^{(1)}=r^{(0)}=\begin{bmatrix}
-            101  \\
-            81  \\
-            36  \\
-            \end{bmatrix}
-    \end{equation*}
-    \begin{equation*}
-        t_{k}=0.37
-    \end{equation*}
-    \begin{equation*}
-        x^{(1)}=x^{(0)}+t_{k}v^{(1)}=\begin{bmatrix}
-            37.40  \\
-            29.99  \\
-            13.33  \\
-            \end{bmatrix}
-    \end{equation*}
-    Y así proseguimos hasta encontrar la solución y esta se da en la iteración 35:
-    \begin{equation*}
-        x^{(35)}=\begin{bmatrix}
-            36  \\
-            37  \\
-            7  \\
-            \end{bmatrix}
-    \end{equation*}
-    
+	\begin{solution}
+		\begin{enumerate}[b)]
+			\item
 
-       
-        
-    
-         
-    
-        
-        
-       
-    
-   
-        \
+			      En el método del descenso más rápido, usamos las
+			      ecuaciones
+			      \begin{align*}
+				      v^{\left(k+1\right)} & =
+				      r^{\left(k\right)}=
+				      b-Ax^{\left(k\right)}.   \\
+				      t_{k}                & =
+				      \dfrac{
+					      \langle
+					      v^{\left(k\right)},
+					      r^{\left(k-1\right)}
+					      \rangle
+				      }{
+					      \langle
+					      v^{\left(k\right)},
+					      Av^{\left(k\right)}
+					      \rangle
+				      }=
+				      \dfrac{
+				      \left(v^{\left(k\right)}\right)^{T}r^{\left(k-1\right)}
+				      }{
+				      \left(v^{\left(k\right)}\right)^{T}Av^{\left(k\right)}
+				      }.                       \\
+				      x^{\left(k\right)}   & =
+				      x^{\left(k-1\right)}+
+				      t_{k}v^{\left(k\right)}.
+			      \end{align*}
+
+			      En la iteración $k=1$ tenemos
+			      \begin{align*}
+				      v^{\left(1\right)} & =
+				      r^{\left(0\right)}=
+				      b-Ax^{\left(0\right)}=
+				      \begin{bmatrix}
+					      101 \\
+					      81  \\
+					      36
+				      \end{bmatrix}.         \\
+				      t_{1}              & =
+				      0.37.                  \\
+				      x^{\left(1\right)} & =
+				      x^{\left(0\right)}+
+				      t_{1}v^{\left(1\right)}=
+				      \begin{bmatrix}
+					      37.40 \\
+					      29.99 \\
+					      13.33
+				      \end{bmatrix}.
+			      \end{align*}
+
+			      Y así, hasta encontrar la solución y esta se da en la
+			      iteración
+			      $k=35$:
+			      \begin{equation*}
+				      x^{\left(35\right)}=
+				      \begin{bmatrix}
+					      36 \\
+					      37 \\
+					      7
+				      \end{bmatrix}.
+			      \end{equation*}
+		\end{enumerate}
+	\end{solution}
 \end{frame}
