@@ -205,7 +205,7 @@
     \begin{solution}
       Ahora con los datos obtenidos pasamos a usar el metodo SOR:
       \begin{equation*}
-          x_{i}^{k}=(1-w)x_{i}^{k-1}+\frac{w}{a_{ii}}(b_{i}-\sum\limits_{j=1}^{i-1}a_{ij}x_{j}^{k}) -\sum\limits_{j=i+1}^{n}a_{ij}x_{j}^{k-1})
+          x_{i}^{(k)}=(1-w)x_{i}^{(k-1)}+\frac{w}{a_{ii}}(b_{i}-\sum\limits_{j=1}^{i-1}a_{ij}x_{j}^{(k)} -\sum\limits_{j=i+1}^{n}a_{ij}x_{j}^{(k-1)})
       \end{equation*}
       y obtenemos que la edad del padre es 37, el de la madre es 36 y del hijo es 7.
     \end{solution}
@@ -213,5 +213,58 @@
 \end{frame}
 
 \begin{frame}
+    Para el método de Descenso Rápido, pasamos a usar las ecuaciones\\
+    \begin{equation*}
+        v^{(k+1)}=r^{(k)}=b-Ax^{(k)} 
+    \end{equation*}
+     
+     \begin{equation*}
+         t_{k}=\frac{<v^{(k)},r^{(k-1)}>}{<v^{(k)},Av^{(k)}>}=\frac{(v^{(k)})^{t}r^{(k-1)}}{(v^{(k)})^{t}Av^{(k)}}
+    \end{equation*}
     
+    \begin{equation*}
+         x^{(k)}=x^{(k-1)}+t_{k}v^{(k)}
+    \end{equation*}
+    Para la primera iteración tenemos:
+    \begin{equation*}
+        v^{(1)}=r^{(0)}=b-Ax^{(0)} 
+    \end{equation*}
+    \begin{equation*}
+        v^{(1)}=r^{(0)}=\begin{bmatrix}
+            101  \\
+            81  \\
+            36  \\
+            \end{bmatrix}
+    \end{equation*}
+    \begin{equation*}
+        t_{k}=0.37
+    \end{equation*}
+    \begin{equation*}
+        x^{(1)}=x^{(0)}+t_{k}v^{(1)}=\begin{bmatrix}
+            37.40  \\
+            29.99  \\
+            13.33  \\
+            \end{bmatrix}
+    \end{equation*}
+    Y así proseguimos hasta encontrar la solución y esta se da en la iteración 35:
+    \begin{equation*}
+        x^{(35)}=\begin{bmatrix}
+            36  \\
+            37  \\
+            7  \\
+            \end{bmatrix}
+    \end{equation*}
+    
+
+       
+        
+    
+         
+    
+        
+        
+       
+    
+   
+        \
 \end{frame}
