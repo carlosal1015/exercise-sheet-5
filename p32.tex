@@ -286,12 +286,35 @@
 			\right\}\subset\mathbb{R}^{m}
 		\end{math}
 		es un conjunto linealmente independiente.
-		Por el teorema~\eqref{thm:tinyqr}, $A$ posee una factorización
-		(única) $QR$, donde $Q\in\mathbb{R}^{m\times n}$ tiene columnas
-		ortogonales y $R$ es triangular superior con entradas en la
-		diagonal positivas.
+		Por el teorema de la \alert{factorización QR delgada}, % ~\eqref{thm:tinyqr}
+		$A$ posee una factorización (única) $QR$, donde
+		$Q\in\mathbb{R}^{m\times n}$ tiene columnas ortogonales y $R$ es triangular
+		superior con entradas en la diagonal positivas.
 
-		Además, por la pregunta $31$,
+		Además, por la pregunta $31$, como $R$ es triangular superior e
+		invertible $\det\left(R\right)>0$, entonces
+
+		\begin{align*}
+			A & =
+			Q\alert{R}=
+			Q\left(
+			\alert{DR}
+			\right),
+			\shortintertext{
+			donde las entradas de matriz diagonal $\left|D{kk}\right|=1$ y
+			$DR$ es invertible, triangular superior y las entradas
+			$\left|\left(DR\right)_{kk}\right|>0$
+			}
+			A & =
+			Q\left(
+			\alert{D^{\frac{1}{2}}}
+			\alert{D^{\frac{1}{2}}}
+			\right)
+			R,
+			\shortintertext{
+				donde las entradas de matriz diagonal $\left|D^{\frac{1}{2}}{kk}\right|=1$.
+			}
+		\end{align*}
 
 		% \begin{theorem}[Factorización $QR$]
 		% 	Sea $A$ una matriz $m\times n$ con columnas independientes.
