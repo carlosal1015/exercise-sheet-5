@@ -273,3 +273,4 @@ TSWLatexianTemp*
 *.lpz
 __pycache__
 !p*.pdf
+!p*.txt

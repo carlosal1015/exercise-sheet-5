@@ -9,9 +9,12 @@ get_U = lambda M: -np.triu(M, k=1)
 get_L = lambda M: -np.tril(M, k=-1)
 get_D_inv = lambda M: np.diag(np.reciprocal(np.diag(M)))
 # FIXME: implement inverse of upper matrix
-get_M_sor = lambda M, w: -np.linalg.inv(1/w * get_D(M) - get_L(M)) @ get_D(M) * (w - 1) / w - get_U(M)
+get_M_sor = lambda M, w: -np.linalg.inv(1 / w * get_D(M) - get_L(M)) @ get_D(M) * (
+    w - 1
+) / w - get_U(M)
 spectral_radius = lambda M: np.max(a=np.absolute(np.linalg.eigvals(a=M)))
 is_spectral_radius_less_1 = lambda M: np.all(spectral_radius(M)) < 1
+
 
 def is_symmetric(A, rtol=1e-5, atol=1e-8):
     """Retorna verdadero si la matriz A es simétrica."""
@@ -25,4 +28,4 @@ def is_positive_definite(A):
 
 get_M_jac = lambda M: get_D_inv(M) @ (get_L(M) + get_U(M))
 
-w_opt = lambda M: 2 / (1 + np.sqrt(1 - spectral_radius(get_M_jac(M))**2))
+w_opt = lambda M: 2 / (1 + np.sqrt(1 - spectral_radius(get_M_jac(M)) ** 2))
