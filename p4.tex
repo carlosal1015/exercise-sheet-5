@@ -157,16 +157,45 @@
 	\begin{solution}
 		\begin{enumerate}[b)]
 			\item
-			      % El método de sobre-relajación sucesiva (SOR) toma la
-			      % dirección de Gauss-Seidel hacia la solución y
-			      % ``sobrepasa'' para tratar de acelerar la convergencia.
-			      % Sea
-			      % \begin{math}
-			      %   A=L+D+U
-			      % \end{math}
-			      En los método de SOR y del descenso más rápido, consideraremos el sistema
+
+			      En los método de SOR y del descenso más rápido,
+			      consideraremos cuando la matriz sea \alert{simétrica} y
+			      \alert{definida positiva}, así multiplicamos por
+			      $\alert{A^{T}}$.
+
 			      \begin{align*}
-				      A^{T}Ax=A^{T}b \\
+				      \alert{A^{T}}Ax=
+				      \alert{A^{T}}b \\
+				      \alert{
+					      {\begin{bmatrix}
+								       1  & 1 & 1 \\
+								       -1 & 0 & 1 \\
+								       -1 & 2 & 0
+							       \end{bmatrix}}^{T}
+				      }
+				      \begin{bmatrix}
+					      1  & 1 & 1 \\
+					      -1 & 0 & 1 \\
+					      -1 & 2 & 0
+				      \end{bmatrix}
+				      \begin{bmatrix}
+					      x_{1} \\
+					      x_{3} \\
+					      x_{2}
+				      \end{bmatrix}=
+				      \alert{
+					      {\begin{bmatrix}
+								       1  & 1 & 1 \\
+								       -1 & 0 & 1 \\
+								       -1 & 2 & 0
+							       \end{bmatrix}}^{T}
+				      }
+				      \begin{bmatrix}
+					      80 \\
+					      1  \\
+					      -22
+				      \end{bmatrix}
+				      \\
 				      \underbrace{
 					      \begin{bmatrix}
 						      3  & -1 & 0 \\
@@ -190,23 +219,16 @@
 					      \end{bmatrix}
 				      }_{\displaystyle \widetilde{b}}.
 			      \end{align*}
-			      como podemos notar la matriz $\widetilde{A}$ obtenida es
-			      tridiagonal y definida positiva porque todos sus
-			      autovalores
+			      En efecto, $\widetilde{A}$ tiene todos los autovalores
 			      \begin{math}
 				      \lambda_{1}=1.623,
 				      \lambda_{2}=2.726,
 				      \lambda_{3}=5.651
 			      \end{math}
-			      son positivos.
-		\end{enumerate}
-	\end{solution}
-\end{frame}
-
-\begin{frame}
-	\begin{solution}
-		\begin{enumerate}[b)]
-			\item
+			      positivos.
+			      El método de sobre-relajación sucesiva (SOR) toma la
+			      dirección de Gauss-Seidel hacia la solución y
+			      ``sobrepasa'' para tratar de acelerar la convergencia.
 
 			      El teorema de \alert{Ostrowoski-Reich} afirma que si
 			      $\widetilde{A}$ es simétrica, definida positiva y
@@ -224,7 +246,16 @@
 			      \end{math}
 			      es el radio espectral de la matriz de iteración de
 			      Jacobi de $\widetilde{A}$.
-			      Luego,
+		\end{enumerate}
+	\end{solution}
+\end{frame}
+
+\begin{frame}
+	\begin{solution}
+		\begin{enumerate}[b)]
+			\item
+
+			      Calculemos, la matriz de iteración de Jacobi
 			      \begin{align*}
 				      \widetilde{A}  & =
 				      \underbrace{ \begin{bmatrix}
@@ -251,7 +282,7 @@
 					      0            & -\dfrac{1}{2} & 0
 				      \end{bmatrix}.
 			      \end{align*}
-			      Entonces obtenemos que
+			      Así,
 			      \begin{math}
 				      \rho\left(T_{\text{Jac}}\right)\approx
 				      0.4082482904638632<1
@@ -261,22 +292,14 @@
 				      \omega_{\text{opt}}\approx
 				      1.0455488498966778\in\left(0,2\right)
 			      \end{math}.
-		\end{enumerate}
-	\end{solution}
-\end{frame}
 
-\begin{frame}
-	\begin{solution}
-		\begin{enumerate}[b)]
-			\item
-
-			      Ahora con los datos obtenidos pasamos a usar el método de
-			      SOR
+			      De la regla iterativa del método de SOR y parámetro de
+			      relajación $\omega_{\text{opt}}$ obtenemos la solución
 			      \begin{equation*}
 				      x_{i}^{\left(k\right)}=
-				      \left(1-\omega\right)
+				      \left(1-\omega_{\text{opt}}\right)
 				      x_{i}^{\left(k-1\right)}+
-				      \dfrac{\omega}{a_{ii}}
+				      \dfrac{\omega_{\text{opt}}}{a_{ii}}
 				      \left(
 				      b_{i}-
 				      \sum\limits_{j=1}^{i-1}
