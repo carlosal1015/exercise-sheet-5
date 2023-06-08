@@ -38,23 +38,106 @@
 				      x_{1}+x_{2}+x_{3}=80,
 				      -x_{1}+x_{2}=1,
 				      -x_{1}+2x_{3}=-22
-				      }
-			      \end{equation*}
-
-			      Así, la ecuación lineal resulta
-			      \begin{equation*}
+				      }\iff
 				      \underbrace{
 					      \begin{bmatrix}
 						      1  & 1 & 1 \\
 						      -1 & 1 & 0 \\
 						      -1 & 0 & 2
 					      \end{bmatrix}
-				      }_{\displaystyle A}
+				      }_{\displaystyle\widehat{A}}
 				      \underbrace{
 					      \begin{bmatrix}
 						      x_{1} \\
 						      x_{2} \\
 						      x_{3}
+					      \end{bmatrix}
+				      }_{\displaystyle\widehat{x}}
+				      =
+				      \underbrace{
+					      \begin{bmatrix}
+						      80 \\
+						      1  \\
+						      -22
+					      \end{bmatrix}
+				      }_{\displaystyle b}.
+			      \end{equation*}
+
+			\item
+
+			      Sea
+			      \begin{math}
+				      P=
+				      \begin{bmatrix}
+					      e_{1} & e_{3} & e_{2}
+				      \end{bmatrix}
+			      \end{math}
+			      una matriz de permutación,
+			      donde
+			      \begin{math}
+				      \left\{e_{1},e_{2},e_{3}\right\}
+			      \end{math}
+			      es la base canónica de $\mathbb{R}^{3}$.
+			      Entonces,
+			      \begin{equation*}
+				      \widehat{A}\widehat{x}=
+				      \left(
+				      \begin{bmatrix}
+					      1  & 1 & 1 \\
+					      -1 & 1 & 0 \\
+					      -1 & 0 & 2
+				      \end{bmatrix}
+				      \alert{
+					      \begin{bmatrix}
+						      1 & 0 & 0 \\
+						      0 & 0 & 1 \\
+						      0 & 1 & 0 \\
+					      \end{bmatrix}
+				      }
+				      \right)
+				      \left(
+				      \alert{
+					      {\begin{bmatrix}
+							      1 & 0 & 0 \\
+							      0 & 0 & 1 \\
+							      0 & 1 & 0 \\
+						      \end{bmatrix}}^{T}
+				      }
+				      \begin{bmatrix}
+					      x_{1} \\
+					      x_{2} \\
+					      x_{3}
+				      \end{bmatrix}
+				      \right)
+				      =
+				      \left(\widehat{A}P\right)
+				      \left(P^{T}\widehat{x}\right)
+				      =
+				      \begin{bmatrix}
+					      1  & 1 & 1 \\
+					      -1 & 0 & 1 \\
+					      -1 & 2 & 0
+				      \end{bmatrix}
+				      \begin{bmatrix}
+					      x_{1} \\
+					      x_{3} \\
+					      x_{2}
+				      \end{bmatrix}.
+			      \end{equation*}
+			      Luego, el sistema equivalente es
+			      \begin{equation*}
+				      \underbrace{
+					      \begin{bmatrix}
+						      1  & 1 & 1 \\
+						      -1 & 0 & 1 \\
+						      -1 & 2 & 0
+					      \end{bmatrix}
+				      }_{\displaystyle A}
+				      \underbrace{
+					      \begin{bmatrix}
+						      x_{1} \\
+						      x_{3} \\
+						      x_{2}
 					      \end{bmatrix}
 				      }_{\displaystyle x}
 				      =
@@ -81,36 +164,9 @@
 			      % \begin{math}
 			      %   A=L+D+U
 			      % \end{math}
-			      Para este método primero reescribiremos la matriz $A$ y
-			      el vector $x$ de la siguiente manera
-
-			      \begin{equation*}
-				      \underbrace{
-					      \begin{bmatrix}
-						      1  & 1 & 1 \\
-						      -1 & 0 & 1 \\
-						      -1 & 2 & 0
-					      \end{bmatrix}
-				      }_{\displaystyle A}
-				      \underbrace{
-					      \begin{bmatrix}
-						      x_{1} \\
-						      x_{3} \\
-						      x_{2}
-					      \end{bmatrix}
-				      }_{\displaystyle x}
-				      =
-				      \underbrace{
-					      \begin{bmatrix}
-						      80 \\
-						      1  \\
-						      -22
-					      \end{bmatrix}
-				      }_{\displaystyle b}.
-			      \end{equation*}
-
-			      Multiplicamos por $A^{T}$ al sistema obteniendo
-			      \begin{equation*}
+			      En los método de SOR y del descenso más rápido, consideraremos el sistema
+			      \begin{align*}
+				      A^{T}Ax=A^{T}b \\
 				      \underbrace{
 					      \begin{bmatrix}
 						      3  & -1 & 0 \\
@@ -121,8 +177,8 @@
 				      \underbrace{
 					      \begin{bmatrix}
 						      x_{1} \\
-						      x_{2} \\
-						      x_{3}
+						      x_{3} \\
+						      x_{2}
 					      \end{bmatrix}
 				      }_{\displaystyle x}
 				      =
@@ -133,7 +189,7 @@
 						      81
 					      \end{bmatrix}
 				      }_{\displaystyle \widetilde{b}}.
-			      \end{equation*}
+			      \end{align*}
 			      como podemos notar la matriz $\widetilde{A}$ obtenida es
 			      tridiagonal y definida positiva porque todos sus
 			      autovalores
