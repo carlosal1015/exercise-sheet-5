@@ -83,7 +83,7 @@
 			\drawmatrix[width=1.2, height=1.2,
 				upper, bbox height=2]{R}
 			= \drawmatrix[width=1.2, height=2]{\widehat{Q}} \;
-			\drawmatrix[width=1.2, height=1.2, upper]{\widehat{R}}.
+			\drawmatrix[width=1.2, height=1.2, upper]{\widehat{R}}
 		\]
 		\begin{tikzpicture}[overlay, remember picture]
 			\path
@@ -293,7 +293,6 @@
 
 		Además, por la pregunta $31$, como $R$ es triangular superior e
 		invertible $\det\left(R\right)>0$, entonces
-
 		\begin{align*}
 			A & =
 			Q\alert{R}=
@@ -301,9 +300,10 @@
 			\alert{DR}
 			\right),
 			\shortintertext{
-			donde las entradas de matriz diagonal $\left|D{kk}\right|=1$ y
-			$DR$ es invertible, triangular superior y las entradas
-			$\left|\left(DR\right)_{kk}\right|>0$
+			donde las entradas de matriz diagonal
+			$\left|{\left(D\right)}_{kk}\right|=1$
+			y $DR$ es invertible, triangular superior y las entradas
+			$\left|{\left(DR\right)}_{kk}\right|>0$
 			}
 			A & =
 			Q\left(
@@ -312,10 +312,10 @@
 			\right)
 			R,
 			\shortintertext{
-				donde las entradas de matriz diagonal $\left|D^{\frac{1}{2}}{kk}\right|=1$.
+			donde las entradas de matriz diagonal
+			$\left|{\left(D^{\frac{1}{2}}\right)}_{kk}\right|=1$.
 			}
 		\end{align*}
-
 		% \begin{theorem}[Factorización $QR$]
 		% 	Sea $A$ una matriz $m\times n$ con columnas independientes.
 		% 	La \alert{factorización $QR$} de $A$ expresa

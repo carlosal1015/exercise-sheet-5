@@ -16,8 +16,8 @@ from sor import (
 )
 
 A = np.array(object=[[1, 1, 1], [-1, 1, 0], [-1, 0, 2]], dtype=float)
-
 b = np.array(object=[[80, 1, -22]], dtype=float).T
+x = np.linalg.solve(A, b)
 
 D = get_D(A)
 L = get_L(A)
@@ -40,4 +40,4 @@ if __name__ == "__main__":
     print(f"¿A.T @ A es simétrica? {is_symmetric(A_tilde)}")
     print(f"¿A.T @ A es definida positiva? {is_positive_definite(A_tilde)}")
     print(f"w_opt= {w_opt(A_tilde)}")
-    # print(f"b=\n{b}\n")
+    print(f"x=\n{x}\n")

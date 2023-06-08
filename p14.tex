@@ -26,32 +26,42 @@
 
 \begin{frame}
 	\begin{solution}
-            La función 
-            \begin{math}
-			      \exp\left(x\right)+x
-		      \end{math}
-            El siguiente teorema nos garantiza la existencia de una raíz en un intervalo dadas ciertas condiciones:
+		La función
+		\begin{math}
+			\exp\left(x\right)+x
+		\end{math}
 
-            \begin{figure}			\includegraphics[width=0.5\paperwidth]{p14_teorema_existencia_sol.jpg}
-			% \caption{.}
-		\end{figure}
+		El siguiente teorema nos garantiza la existencia de una raíz en
+		un intervalo dadas ciertas condiciones:
+		\begin{theorem}
+			Si
+			\begin{math}
+				f\colon
+				\left[a,b\right]\subset\mathbb{R}\to
+				\mathbb{R}
+			\end{math}
+			es una función continua y $f\left(a\right)f\left(b\right)<0$,
+			entonces existe un $c\in\left]a,b\right[$ tal que
+			$f\left(c\right)=0$.
+		\end{theorem}
 
-		\begin{figure}			\includegraphics[width=0.5\paperwidth]{p14_bisection_execution.jpg}
-			% \caption{.}
+		\begin{figure}
+			\includegraphics[width=0.5\paperwidth]{p14_teorema_existencia_sol.jpg}
+			\includegraphics[width=0.5\paperwidth]{p14_bisection_execution.jpg}
 		\end{figure}
 	\end{solution}
 \end{frame}
 
-\begin{frame}[fragile]
-	\begin{columns}
-		\begin{column}{0.48\textwidth}
-			\inputminted[fontsize=\tiny,firstline=1,lastline=24]{python}{p14_bisection.py}
-		\end{column}
-		\begin{column}{0.48\textwidth}
-			\inputminted[fontsize=\tiny,firstline=26,lastline=52]{python}{p4_sor.py}
-		\end{column}
-	\end{columns}
-\end{frame}
+% \begin{frame}[fragile]
+% 	\begin{columns}
+% 		\begin{column}{0.48\textwidth}
+% 			\inputminted[fontsize=\tiny,firstline=1,lastline=24]{python}{p14_bisection.py}
+% 		\end{column}
+% 		\begin{column}{0.48\textwidth}
+% 			\inputminted[fontsize=\tiny,firstline=26,lastline=52]{python}{p4_sor.py}
+% 		\end{column}
+% 	\end{columns}
+% \end{frame}
 
 \begin{frame}
 	\begin{solution}
