@@ -26,26 +26,26 @@
 	\end{enumerate}
 
 	\begin{solution}
-     Primero hallemos el rango de la Matriz:\\
-     Probemos Rango = 3  ( Por Método de Determinantes): \\
-        \begin{math}
-			det(A)=
+		El rango de $A$ será $3$ sii
+		\begin{equation*}
+			\det\left(A\right)=
 			\begin{vmatrix}
-			5  & -5     & -6 \\
-			-5 & 3      & -1 \\
-			0  & \alpha & 7
-			\end{vmatrix}
-		\end{math} = 
-            5 
-            \begin{vmatrix}
-		  3      & -1 \\
-			\alpha & 7
-			\end{vmatrix} +5
-            \begin{vmatrix}
-		  -5     & -6 \\
-			\alpha & 7
-		.   \end{vmatrix} \\
-        \hspace{5cm} = 5 (21 + \alpha) + 5 (-35 + 6\alpha)
+				5  & -5     & -6 \\
+				-5 & 3      & -1 \\
+				0  & \alpha & 7
+			\end{vmatrix}=
+			5\begin{vmatrix}
+				3      & -1 \\
+				\alpha & 7
+			\end{vmatrix}+
+			5\begin{vmatrix}
+				-5     & -6 \\
+				\alpha & 7
+			\end{vmatrix}=
+			5\left(21+\alpha\right)+
+			5\left(-35+6\alpha\right)\neq0.
+		\end{equation*}
+
 	\end{solution}
 \end{frame}
 
