@@ -369,6 +369,14 @@
 				      t_{k}v^{\left(k\right)}.
 			      \end{align*}
 
+			      Sea
+			      \begin{math}
+				      x^{\left(0\right)}=
+					      {\begin{bmatrix}
+							      0 & 0 & 0
+						      \end{bmatrix}}^{T}
+				      \in\mathbb{R}^{3}
+			      \end{math}.
 			      En la iteración $k=1$ tenemos
 			      \begin{align*}
 				      v^{\left(1\right)} & =
@@ -380,6 +388,18 @@
 					      36
 				      \end{bmatrix}.         \\
 				      t_{1}              & =
+				      \dfrac{
+					      \langle
+					      v^{\left(1\right)},
+					      r^{\left(0\right)}
+					      \rangle
+				      }{
+					      \langle
+					      v^{\left(1\right)},
+					      Av^{\left(1\right)}
+					      \rangle
+				      }
+				      =
 				      0.37.                  \\
 				      x^{\left(1\right)} & =
 				      x^{\left(0\right)}+
@@ -396,11 +416,11 @@
 			      $k=35$:
 			      \begin{equation*}
 				      x^{\left(35\right)}=
-				      \begin{bmatrix}
-					      36 \\
-					      37 \\
-					      7
-				      \end{bmatrix}.
+					      {\begin{bmatrix}
+							      36 &
+							      37 &
+							      7
+						      \end{bmatrix}}^{T}.
 			      \end{equation*}
 		\end{enumerate}
 	\end{solution}
