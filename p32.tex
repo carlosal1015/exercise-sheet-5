@@ -53,8 +53,8 @@
 	\begin{theorem}[Factorización de Cholesky]
 		Si $A\in\mathbb{R}^{n\times n}$ es simétrica y definida
 		positiva, entonces existe una única matriz triangular inferior
-		$G\in\mathbb{R}^{n\times n}$ con entradas en la diagonal
-		positivas tal que $A=GG^{T}$.
+		$G\in\mathbb{R}^{n\times n}$ con entradas positivas en la
+		diagonal tal que $A=GG^{T}$.
 
 		\
 
@@ -134,8 +134,8 @@
 		completa.
 		La factorización $QR$ delgada $A=Q_{1}R_{1}$ es única donde
 		$Q_{1}\in\mathbb{R}^{m\times n}$ tiene columnas ortogonales y
-		$R_{1}$ es triangular superior con entradas en la diagonal
-		positivas.
+		$R_{1}$ es triangular superior con entradas positivas en la
+		diagonal.
 		Más aún, $R_{1}=G^{T}$ donde $G$ es el factor de Cholesky
 		triangular inferior de $A^{T}A$.
 
@@ -172,9 +172,9 @@
 \begin{frame}
 	\begin{theorem}[Pregunta N$^{\circ}$31]
 		Si $R$ es triangular superior e invertible, entonces existe
-		una matriz diagonal $D$ con entradas en la diagonal $\pm 1$ tal
+		una matriz diagonal $D$ con entradas $\pm 1$ en la diagonal tal
 		que $R_{1}=DR$ es invertible, triangular superior y tiene
-		entradas en la diagonal positivas.
+		entradas positivas en la diagonal.
 
 		\
 
@@ -208,80 +208,151 @@
 		\end{math}.
 		Entonces,
 		\begin{math}
-			DR=
-			\begin{bNiceMatrix}
-				d_{11} &        &        \\
-				       & \ddots &        \\
-				       &        & d_{nn}
-			\end{bNiceMatrix}
-			\begin{bNiceMatrix}
-				r_{11} & \cdots & r_{1n} \\
-				       & \ddots & \vdots \\
-				       &        & r_{nn}
-			\end{bNiceMatrix}
-			=
-			\begin{bmatrix}
-				d_{11}r_{11} & \cdots & d_{1n}r_{1n} \\
-				             & \ddots &              \\
-				             &        & d_{nn}r_{nn}
-			\end{bmatrix}
+			DR
 		\end{math}
 		es
 		\begin{description}
 			\item[invertible]
 
+				porque el
+				\begin{math}
+					\det\left(DR\right)=
+					\det\left(D\right)
+					\det\left(R\right)=
+					\underbrace{\left(\prod\limits_{i=1}^{n}d_{kk}\right)}_{\neq0}
+					\underbrace{\left(\prod\limits_{i=1}^{n}r_{kk}\right)}_{\neq0}
+					\neq0
+				\end{math}.
+
 			\item[triangular superior]
 
-			\item[entradas diagonal positivas]
+				\begin{math}
+					DR=
+					\begin{bNiceMatrix}
+						\alert{d_{11}} &        &                \\
+						               & \ddots &                \\
+						               &        & \alert{d_{nn}}
+					\end{bNiceMatrix}
+					\begin{bNiceMatrix}
+						r_{11} & \cdots & r_{1n} \\
+						       & \ddots & \vdots \\
+						       &        & r_{nn}
+					\end{bNiceMatrix}
+					=
+					\begin{bmatrix}
+						\alert{d_{11}}r_{11} & \cdots & \alert{d_{11}}r_{1n} \\
+						                     & \ddots & \vdots               \\
+						                     &        & \alert{d_{nn}}r_{nn}
+					\end{bmatrix}
+				\end{math}
+				es triangular superior.
 		\end{description}
 	\end{proof}
+\end{frame}
 
-	% \begin{example}[Pregunta N$^{\circ}$31]
-	% 	Sea
-	% 	\begin{math}
-	% 		R=
-	% 		\begin{bNiceMatrix}
-	% 			1 & 1 \\
-	% 			0 & 1
-	% 		\end{bNiceMatrix}\in\mathbb{R}^{2\times 2}
-	% 	\end{math}
-	% 	una matriz triangular superior e invertible porque el
-	% 	$\det\left(R\right)=1$.
-	% 	Entonces, existe
-	% 	\begin{math}
-	% 		D=
-	% 		\begin{bNiceMatrix}
-	% 			\alert{1} & 0         \\
-	% 			0         & \alert{1}
-	% 		\end{bNiceMatrix}
-	% 	\end{math}
-	% 	con
-	% 	\begin{math}
-	% 		\left|a_{11}\right|=
-	% 		\left|a_{22}\right|=
-	% 		\alert{1}
-	% 	\end{math}
-	% 	tal que
-	% 	\begin{math}
-	% 		R_{1}=
-	% 		DR=
-	% 		\begin{bNiceMatrix}
-	% 			1 & 0 \\
-	% 			0 & 1
-	% 		\end{bNiceMatrix}
-	% 		\begin{bNiceMatrix}
-	% 			1 & 1 \\
-	% 			0 & 1
-	% 		\end{bNiceMatrix}=
-	% 		\begin{bNiceMatrix}
-	% 			\alert{1} & 1         \\
-	% 			0         & \alert{1}
-	% 		\end{bNiceMatrix}
-	% 	\end{math}
-	% 	es triangular superior, invertible porque el
-	% 	$\det\left(R_{1}\right)=1$ y las entradas
-	% 	de la diagonal son \alert{positivas}.
-	% \end{example}
+\begin{frame}
+	\begin{description}
+		\item[entradas positivas en la diagonal]
+
+			Consideremos la matriz
+			\begin{equation*}
+				R^{T}R=
+				\begin{bNiceMatrix}
+					r_{11} &        &        \\
+					\vdots & \ddots &        \\
+					r_{1n} & \cdots & r_{nn}
+				\end{bNiceMatrix}
+				\begin{bNiceMatrix}
+					r_{11} & \cdots & r_{1n} \\
+					       & \ddots & \vdots \\
+					       &        & r_{nn}
+				\end{bNiceMatrix}=
+				\begin{bNiceMatrix}
+					r^{2}_{11}   & \cdots & r_{11}r_{1n}                    \\
+					\vdots       & \ddots & \vdots                          \\
+					r_{11}r_{1n} & \cdots & \sum\limits_{i=1}^{n}r^{2}_{ii}
+				\end{bNiceMatrix}.
+			\end{equation*}
+			Es simétrica porque
+			\begin{math}
+				\left(R^{T}R\right)^{T}=
+				R^{T}{\left(R^{T}\right)}^{T}=
+				R^{T}R
+			\end{math}
+			y es definida positiva porque
+			\begin{math}
+				\forall k\in\left\{1,\dotsc,n\right\}:
+				\left|
+				\left(R^{T}R\right)_{k}
+				\right|>0
+			\end{math}.
+			Del teorema de la \alert{factorización de Cholesky},
+			existe una única matriz triangular inferior
+			\begin{math}
+				{\left(DR\right)}^{T}\in\mathbb{R}^{n\times n}
+			\end{math}
+			con entradas positivas en la diagonal
+			tal que
+			\begin{math}
+				R^{T}R=
+					{\left(DR\right)}^{T}
+					{\left({\left(DR\right)}^{T}\right)}^{T}
+			\end{math}.
+			Así, la matriz
+			\begin{math}
+				DR
+			\end{math}
+			tiene entradas positivas en la diagonal.
+	\end{description}
+
+	\
+
+	\begin{example}[Pregunta N$^{\circ}$31]
+		Sea
+		\begin{math}
+			R=
+			\begin{bNiceMatrix}
+				1 & 1 \\
+				0 & 1
+			\end{bNiceMatrix}\in\mathbb{R}^{2\times 2}
+		\end{math}
+		una matriz triangular superior e invertible porque el
+		$\det\left(R\right)=1$.
+		Entonces, existe
+		\begin{math}
+			D=
+			\begin{bNiceMatrix}
+				\alert{1} & 0         \\
+				0         & \alert{1}
+			\end{bNiceMatrix}
+		\end{math}
+		con
+		\begin{math}
+			\left|a_{11}\right|=
+			\left|a_{22}\right|=
+			\alert{1}
+		\end{math}
+		tal que
+		\begin{math}
+			R_{1}=
+			DR=
+			\begin{bNiceMatrix}
+				1 & 0 \\
+				0 & 1
+			\end{bNiceMatrix}
+			\begin{bNiceMatrix}
+				1 & 1 \\
+				0 & 1
+			\end{bNiceMatrix}=
+			\begin{bNiceMatrix}
+				\alert{1} & 1         \\
+				0         & \alert{1}
+			\end{bNiceMatrix}
+		\end{math}
+		es triangular superior, invertible porque el
+		$\det\left(R_{1}\right)=1$ y tiene entradas \alert{positivas}
+		en la diagonal.
+	\end{example}
 \end{frame}
 
 \begin{frame}
@@ -291,8 +362,8 @@
 		      Si $A$ tiene vectores columna linealmente independientes,
 		      sea $A=QR$ donde $Q$ tiene columnas ortogonales y $R$ es
 		      invertible y triangular superior.
-		      Mostrar que existe una matriz diagonal $D$ con entradas en
-		      la diagonal $\pm 1$ tal que
+		      Mostrar que existe una matriz diagonal $D$ con entradas
+		      $\pm 1$ en la diagonal tal que
 		      \begin{math}
 			      A=
 			      \left(QD\right)
@@ -351,8 +422,7 @@
 			\alert{DR}
 			\right),
 			\shortintertext{
-			donde las entradas de matriz diagonal
-			$\left|{\left(D\right)}_{kk}\right|=1$
+			con entradas $\left|{\left(D\right)}_{kk}\right|=1$ en la diagonal
 			y $DR$ es invertible, triangular superior y las entradas
 			$\left|{\left(DR\right)}_{kk}\right|>0$
 			}
@@ -363,8 +433,9 @@
 			\right)
 			R,
 			\shortintertext{
-			donde las entradas de matriz diagonal
-			$\left|{\left(D^{\frac{1}{2}}\right)}_{kk}\right|=1$.
+			con entradas
+			$\left|{\left(D^{\frac{1}{2}}\right)}_{kk}\right|=1$
+			en la diagonal.
 			}
 		\end{align*}
 	\end{solution}
