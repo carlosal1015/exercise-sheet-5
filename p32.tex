@@ -161,10 +161,10 @@
 	% 	Sea
 	% 	\begin{math}
 	% 		A=
-	% 		\begin{bmatrix}
+	% 		\begin{bNiceMatrix}
 	% 			1 & 0 & 0  \\
 	% 			2 & 1 & -1
-	% 		\end{bmatrix}
+	% 		\end{bNiceMatrix}
 	% 	\end{math}.
 	% \end{example}
 \end{frame}
@@ -186,60 +186,102 @@
 	\end{theorem}
 
 	\begin{proof}
-		Sea
+		Sean
 		\begin{math}
-			R=\begin{bmatrix}
-				r_{11} & \cdots & r_{1n}
-			\end{bmatrix}\in\mathbb{R}^{n\times n}
+			R=\begin{bNiceMatrix}
+				r_{11} & \cdots & r_{1n} \\
+				       & \ddots & \vdots \\
+				       &        & r_{nn}
+			\end{bNiceMatrix},
+			D=\begin{bNiceMatrix}
+				d_{11} &        &        \\
+				       & \ddots &        \\
+				       &        & d_{nn}
+			\end{bNiceMatrix}
+			\in\mathbb{R}^{n\times n}
 		\end{math}
+		una matriz triangular superior y una matriz diagonal tales que
+		\begin{math}
+			\forall k\in\left\{1,\dotsc,n\right\}:
+			r_{kk}\neq0,
+			\left|d_{kk}\right|=1
+		\end{math}.
+		Entonces,
+		\begin{math}
+			DR=
+			\begin{bNiceMatrix}
+				d_{11} &        &        \\
+				       & \ddots &        \\
+				       &        & d_{nn}
+			\end{bNiceMatrix}
+			\begin{bNiceMatrix}
+				r_{11} & \cdots & r_{1n} \\
+				       & \ddots & \vdots \\
+				       &        & r_{nn}
+			\end{bNiceMatrix}
+			=
+			\begin{bmatrix}
+				d_{11}r_{11} & \cdots & d_{1n}r_{1n} \\
+				             & \ddots &              \\
+				             &        & d_{nn}r_{nn}
+			\end{bmatrix}
+		\end{math}
+		es
+		\begin{description}
+			\item[invertible]
+
+			\item[triangular superior]
+
+			\item[entradas diagonal positivas]
+		\end{description}
 	\end{proof}
 
-	\begin{example}[Pregunta N$^{\circ}$31]
-		Sea
-		\begin{math}
-			R=
-			\begin{bmatrix}
-				1 & 1 \\
-				0 & 1
-			\end{bmatrix}\in\mathbb{R}^{2\times 2}
-		\end{math}
-		una matriz triangular superior e invertible porque el
-		$\det\left(R\right)=1$.
-		Entonces, existe
-		\begin{math}
-			D=
-			\begin{bmatrix}
-				\alert{1} & 0         \\
-				0         & \alert{1}
-			\end{bmatrix}
-		\end{math}
-		con
-		\begin{math}
-			\left|a_{11}\right|=
-			\left|a_{22}\right|=
-			\alert{1}
-		\end{math}
-		tal que
-		\begin{math}
-			R_{1}=
-			DR=
-			\begin{bmatrix}
-				1 & 0 \\
-				0 & 1
-			\end{bmatrix}
-			\begin{bmatrix}
-				1 & 1 \\
-				0 & 1
-			\end{bmatrix}=
-			\begin{bmatrix}
-				\alert{1} & 1         \\
-				0         & \alert{1}
-			\end{bmatrix}
-		\end{math}
-		es triangular superior, invertible porque el
-		$\det\left(R_{1}\right)=1$ y las entradas
-		de la diagonal son \alert{positivas}.
-	\end{example}
+	% \begin{example}[Pregunta N$^{\circ}$31]
+	% 	Sea
+	% 	\begin{math}
+	% 		R=
+	% 		\begin{bNiceMatrix}
+	% 			1 & 1 \\
+	% 			0 & 1
+	% 		\end{bNiceMatrix}\in\mathbb{R}^{2\times 2}
+	% 	\end{math}
+	% 	una matriz triangular superior e invertible porque el
+	% 	$\det\left(R\right)=1$.
+	% 	Entonces, existe
+	% 	\begin{math}
+	% 		D=
+	% 		\begin{bNiceMatrix}
+	% 			\alert{1} & 0         \\
+	% 			0         & \alert{1}
+	% 		\end{bNiceMatrix}
+	% 	\end{math}
+	% 	con
+	% 	\begin{math}
+	% 		\left|a_{11}\right|=
+	% 		\left|a_{22}\right|=
+	% 		\alert{1}
+	% 	\end{math}
+	% 	tal que
+	% 	\begin{math}
+	% 		R_{1}=
+	% 		DR=
+	% 		\begin{bNiceMatrix}
+	% 			1 & 0 \\
+	% 			0 & 1
+	% 		\end{bNiceMatrix}
+	% 		\begin{bNiceMatrix}
+	% 			1 & 1 \\
+	% 			0 & 1
+	% 		\end{bNiceMatrix}=
+	% 		\begin{bNiceMatrix}
+	% 			\alert{1} & 1         \\
+	% 			0         & \alert{1}
+	% 		\end{bNiceMatrix}
+	% 	\end{math}
+	% 	es triangular superior, invertible porque el
+	% 	$\det\left(R_{1}\right)=1$ y las entradas
+	% 	de la diagonal son \alert{positivas}.
+	% \end{example}
 \end{frame}
 
 \begin{frame}
@@ -281,9 +323,9 @@
 		Sea
 		\begin{math}
 			A=
-			\begin{bmatrix}
-				c_{1} | & \cdots & |c_{n}
-			\end{bmatrix}
+			\begin{bNiceMatrix}[vlines,rules/width=0.2pt]
+				c_{1} & \cdots & c_{n}
+			\end{bNiceMatrix}
 			\in\mathbb{R}^{m\times n}
 		\end{math}
 		y
@@ -325,10 +367,6 @@
 			$\left|{\left(D^{\frac{1}{2}}\right)}_{kk}\right|=1$.
 			}
 		\end{align*}
-		% \begin{theorem}[Factorización $QR$]
-		% 	Sea $A$ una matriz $m\times n$ con columnas independientes.
-		% 	La \alert{factorización $QR$} de $A$ expresa
-		% \end{theorem}
 	\end{solution}
 \end{frame}
 
