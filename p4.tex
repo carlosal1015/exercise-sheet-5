@@ -158,14 +158,11 @@
 		\begin{enumerate}[b)]
 			\item
 
-			      En los método de SOR y del descenso más rápido,
-			      consideraremos cuando la matriz sea \alert{simétrica} y
-			      \alert{definida positiva}, así multiplicamos por
-			      $\alert{A^{T}}$.
-
+			      En los métodos de sobre-relajación sucesiva y del descenso más rápido,
+			      consideraremos el sistema equivalente:
 			      \begin{align*}
 				      \alert{A^{T}}Ax=
-				      \alert{A^{T}}b \\
+				      \alert{A^{T}}b. \\
 				      \alert{
 					      {\begin{bmatrix}
 								       1  & 1 & 1 \\
@@ -194,7 +191,7 @@
 					      80 \\
 					      1  \\
 					      -22
-				      \end{bmatrix}
+				      \end{bmatrix}.
 				      \\
 				      \underbrace{
 					      \begin{bmatrix}
@@ -217,19 +214,16 @@
 						      36  \\
 						      81
 					      \end{bmatrix}
-				      }_{\displaystyle \widetilde{b}}.
+				      }_{\displaystyle \widetilde{b}},
 			      \end{align*}
-			      En efecto, $\widetilde{A}$ tiene todos los autovalores
+			      donde $\widetilde{A}$ es \alert{simétrica} y
+			      \alert{definida positiva} porque sus autovalores
 			      \begin{math}
-				      \lambda_{1}=1.623,
-				      \lambda_{2}=2.726,
-				      \lambda_{3}=5.651
+				      \lambda_{1}\approx 1.623,
+				      \lambda_{2}\approx 2.726,
+				      \lambda_{3}\approx 5.651
 			      \end{math}
-			      positivos.
-			      El método de sobre-relajación sucesiva (SOR) toma la
-			      dirección de Gauss-Seidel hacia la solución y
-			      ``sobrepasa'' para tratar de acelerar la convergencia.
-
+			      son positivos.
 			      El teorema de \alert{Ostrowoski-Reich} afirma que si
 			      $\widetilde{A}$ es simétrica, definida positiva y
 			      tridiagonal, la elección óptima del
