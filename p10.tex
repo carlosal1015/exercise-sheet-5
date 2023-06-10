@@ -43,19 +43,70 @@ tomar el punto medio como una aproximación de \( x∗ \) , luego escogemos el n
 búsqueda \( [a, c] \) o \( [c, b] \) considerando el cambio de signo de \( f \).
 \end{frame}
 
-\begin{frame}{Método de la bisección }
-         Realizamos 2 iteraciones manuales , según lo descrito anteriormente.
-         Para \( [a_0 , b_0 ] = [1 , 2]\)
-             \( k = 1 \) \\
-             \(c_1 = \frac{1+2}{2} = 1.5 \) ; \(f(1.5)<0 \) \\
-             \(f(1.5)f(2) <0\) \\ \(\xrightarrow{} a_1 = c_1 \land b_1 = b_0  \)
-             \( \xrightarrow{} a_1 = 1.5 \land b_1 = 2\)
+\begin{frame}{Método de la bisección}
+    Realizamos 2 iteraciones manuales , según lo descrito anteriormente.
+         Para \( [a_0 , b_0 ] = [1 , 2]\) \\
+        \(  k = 1 \)
+         \begin{equation*}
+              c_1 = \frac{1+2}{2} = 1.5  ; f(1.5)<0 
+         \end{equation*}
+         \begin{equation*}
+             f(1.5)f(2) <0  
+         \end{equation*}
+         \begin{equation*}
+              \xrightarrow{} a_1 = c_1 \land b_1 = b_0 
+         \end{equation*}
+         \begin{equation*}
+             \xrightarrow{} a_1 = 1.5 \land b_1 = 2
+         \end{equation*}
+
+        \(  k = 2 \)
+         \begin{equation*}
+              c_2 = \frac{2+1.5}{2} = 1.75  ; f(1.75)<0 
+         \end{equation*}
+         \begin{equation*}
+             f(1.75)f(2) <0  
+         \end{equation*}
+         \begin{equation*}
+              \xrightarrow{} a_2 = c_2 \land b_2 = b_1
+         \end{equation*}
+         \begin{equation*}
+             \xrightarrow{} a_2 = 1.75 \land b_2 = 2
+         \end{equation*}
 \end{frame}
 
 
 \begin{frame}{Método de la bisección}
          \includegraphics[width=8cm]{p10-codigo-biseccion.png}
         \includegraphics[width=6cm]{p10-ejecucion-biseccion.png}
+\end{frame}
+
+\begin{frame}{Regla Falsa}
+    \begin{figure}
+        \centering
+         \includegraphics[width=3.5cm]{p10-grafica-regla-falsa.png}
+        \label{fig:enter-label}
+    \end{figure}
+   
+
+    En el intervalo \( [1,2] = [a_0 , b_0] \)
+    Existe una solución ya que \(f(1)f(2)<0 \) \\
+    \(k=1\)
+    \begin{equation*}
+        f(1) = -1 , f(2) = 0.38629
+    \end{equation*}
+    \begin{equation*}
+        c_1 = a_0 - \frac{f(a_0)(b_0 - a_0 }{f(b)-f(a)} = 1.7213
+    \end{equation*}
+    \begin{equation*}
+        f(c_1)<0
+    \end{equation*}
+    \begin{equation*}
+       \xrightarrow{} f(c_1)f(2)<0
+    \end{equation*}
+    \begin{equation*}
+       \xrightarrow{} a_1 = c_1 \land b_1 = b_0
+    \end{equation*}
 \end{frame}
 
 \begin{frame}{Regla Falsa}

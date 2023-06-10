@@ -66,7 +66,12 @@
 \begin{frame}
 	\begin{solution}
 
-		$Det(A_{2x2}) \neq 0$ \\
+    $Det(A_{2x2}) \neq 0$ 
+    
+    \begin{vmatrix}
+		5     & -5 \\
+		-5    &  3
+	\end{vmatrix}= 40 \\
 
 		\begin{vmatrix}
 			5  & -5 \\
@@ -106,8 +111,37 @@
 		Tenemos que: \\
 		$Ax=b$
 
+    Tenemos que: \\
+    $Ax=b$ \\
+    $A^{T}.A.x=A^{T}.b$\\
+    $(A^{T}.A)^{-1}(A^{T}.A).x = (A^{T}.A)^{-1} A^{T}.b $ \\
+    $x = (A^{T}.A)^{-1} . A^{T} . b$
+    
+    \end{solution}
+\end{frame}
 
+\begin{frame}
+	\begin{solution}
 
-		.
-	\end{solution}
+    $A^{T}.A=$
+    \begin{vmatrix}
+		50  &  -40  & -25 \\
+		-40 &   38  &  41 \\
+	  -25 &   41  &  86 \\
+	\end{vmatrix} \\
+
+    Hacemos matriz escalonada por Gauss-Jordan: \\
+    $A^{T}.A = $
+    \begin{vmatrix}
+		1 &  0  & 23/10 \\
+		0 &  1  & 7/2 \\
+	  0 &  0  &  0 \\
+	\end{vmatrix} \\
+
+    $Det(A^{T}.A) = 0$\\
+    Entonces: \\
+    $(A^{T}.A)^{$
+    
+
+    \end{solution}
 \end{frame}
