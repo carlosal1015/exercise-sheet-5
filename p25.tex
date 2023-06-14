@@ -140,8 +140,82 @@
 
     $Det(A^{T}.A) = 0$\\
     Entonces: \\
-    $(A^{T}.A)^{$
+    $(A^{T}.A)^{-1}$ no existe \\
+    Entonces: \\
+    $x = (A^{T}.A)^{-1}.A^{T}.b $ no existe \\
+    Entonces: \\
+    x = Tiene infinitas soluciones \\
+    Entonces hacemos la matriz aumentada: \\
     
-
+    \begin{equation*}
+        
+        \begin{bmatrix}
+	       A^{T}.A  &  \mid & A^{T}.b \\
+	  \end{bmatrix} = \\
+    
+        \begin{bmatrix}
+			1  &     & 23/10 & \mid & -10 \\
+		  0  & 1   & 7/2   & \mid &  4   \\
+			0  & 0   & 0     & \mid & 4
+		\end{bmatrix} \\
+  
+    \end{equation*}
+    
     \end{solution}
+\end{frame}
+
+\begin{frame}
+    \begin{solution}
+     Tenemos que: \\
+    $x_{3}=t$ \\
+    $x_{2}+\frac{7}{2}t=4$ \\
+    $x_{2} = 4 - \frac{7}{2}t$ \\
+    $x_{1}+\frac{23}{10}t = -10$ \\
+    $x_{1}= -10 - \frac{23}{10}t$ \\
+
+    \begin{math}
+    
+    \widehat{x} =
+        \begin{bmatrix}
+		  -10 - \frac{23}{10}t    \\
+		  4 - \frac{7}{2}t   \\
+			t  
+		\end{bmatrix} \\
+    
+    \end{math}
+
+    Entonces el mínimo cuadrado es: \\
+    \begin{math}
+        Min\left \| A\widehat{x}-b \right \| ^ 2 \\
+    \end{math}
+
+    Entonces tenemos que: \\
+        A$\widehat{x}$ - b= 
+        \begin{bmatrix}
+		  -70  \\
+		  62   \\
+			8  
+		\end{bmatrix} - 
+
+        \begin{bmatrix}
+		  -1  \\
+		  1   \\
+			2  
+		\end{bmatrix} \\
+  
+    \end{solution}
+\end{frame} \\
+
+\begin{frame}
+    \begin{solution}
+        \begin{math}
+            A\widehat{x}-b =
+            \begin{Vmatrix}
+		  -71  \\
+		  61   \\
+		  6  
+		  \end{Vmatrix} ^2 \\
+        \end{math}
+
+    \end{solution}    
 \end{frame}
